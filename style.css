@@ -1,0 +1,33 @@
+* {margin :0;}
+header {
+    background : url(cover_overlay.png) no-repeat center/100% 100%,
+                 url(https://cdn.pixabay.com/photo/2019/11/17/07/52/current-4631715__480.jpg) no-repeat center/100% 100%;
+    background-size : cover;
+    height : 500px;
+}
+header h1, header h2 {
+    text-align: center;
+    text-shadow: 0 0 5px black;
+}
+
+header h1 {
+    color : white;
+    font-size : 40px; 
+    margin-top :0;
+    padding-top: 100px;
+}
+
+header div.separateur {
+    height:1px;
+    background-color: white;
+    width : 85%;
+    margin : 0 auto;
+}
+
+header h2 {
+    color : rgb(241, 226, 3);
+    font-size: 45px;
+    font-style: italic;
+}
+
+h3 {text-align:justify;}
