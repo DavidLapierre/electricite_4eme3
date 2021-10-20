@@ -31,3 +31,24 @@ header h2 {
 }
 
 h3 {text-align:justify;}
+
+
+.MM  {
+    width:95%;
+	margin : 30px;
+    margin : auto;
+    margin-bottom: 20px;;
+	display : block;
+	background : white;
+    padding-bottom : 5px;
+    border: 0px black solid;
+	border-radius : 10px;
+    overflow : hidden;
+    box-shadow:  9px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+  }
+
+
+.picture {
+    width:95%;
+    height : auto;
+}
