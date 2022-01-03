@@ -2,18 +2,20 @@
 <html lang="fr">
 <head>
     <meta charset = "UTF-8">
-        <title> Électricité </title>
+        <title> Résistance électrique </title>
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
         <!-- <link rel="icon" type="image/png" href="pictures/favicon.png"> -->
         <meta name="viewport" content="width=device-width,initial-scale=1" /> <!-- RESPONSIVE -->
          <link rel="stylesheet" href="style.css">
+         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.0/chart.min.js" integrity="sha512-TW5s0IT/IppJtu76UbysrBH9Hy/5X41OTAbQuffZFU6lQ1rdcLHzpU5BzVvr/YFykoiMYZVWlr/PX1mDcfM9Qg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
          <script src="https://cdn.geogebra.org/apps/deployggb.js"></script>
 </head>
 <body>
     <!-- EN-TÊTE -->
-   <header>
+   <header style="background : url(cover_overlay.png) no-repeat center/100% 100%,
+   url(https://cdn.pixabay.com/photo/2020/11/08/06/52/resistance-5722984_1280.jpg) no-repeat center/100% 100%;">
         <h1>LISTE DES VIDÉOS DU CHAPITRE :</h1>
         
         <div class="separateur"></div>
@@ -27,7 +29,10 @@
           <li class="nav-item"><a href="index.html" class="nav-link">Accueil</a></li>
         </ul>
         <ul class="navbar-nav">
-          <li class="nav-item"><a href="#" class="nav-link">Suite</a></li>
+            <li class="nav-item"><a href="TP1.html" class="nav-link">Retour</a></li>
+          </ul>
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="analogie_velo.html" class="nav-link">Suite</a></li>
         </ul>
       </div>
     </div>
@@ -117,17 +122,152 @@
             </div>
         </div>
     </div>
-   
-   
-    <div class="ratio ratio-4x3 m-5">
-        <iframe class="w-75" src="https://www.geogebra.org/classic/verrdznc?embed"  allowfullscreen 
-        style="border: 1px solid #e4e4e4;border-radius: 4px;width:75%; height:850px;" frameborder="0"></iframe>
-    </div> 
-    <div class="ratio ratio-4x3 m-5">
-        <iframe class="w-75" src="https://www.geogebra.org/classic/t42prwkm?embed"  allowfullscreen 
-        style="border: 1px solid #e4e4e4;border-radius: 4px;width:75%; height:850px;" frameborder="0"></iframe>
-    </div>   
 
+    <div class="row">
+        <div class="col-12 text-center display-6 text-uppercase bg-white fw-bold">
+        <p class="pt-4 px-3 text-primary">COMMENT TROUVER UN MODÈLE MATHÉMATIQUE DE LA DROITE  ? </p> 
+        </div>
+    </div>
+
+<div class="row m-5">
+    <div class="col-md-3 col-sm-12 bg-white text-dark p-4 ">
+        <!-- CANEVAS 1 -->
+        <div style="width:400px; height:500px">
+            <canvas id="myChart" width="200" height="200">Canevas</canvas>
+        </div>
+
+        <!-- SLIDER 1 -->
+        <div id="slider" class="m-3">
+            <input class="bar" type="range" id="rangeinput" min="0" max="5" step="1" value="1" />
+            R = <output id="rangevalue">1</output>
+        </div>
+        <script  src="graph01.js"></script>
+    </div>
+    <div class="col-md-9 col-sm-12 bg-white text-dark p-4 mt-5">
+        <h3 class="lead fs-3 text-justify">
+        
+            <span class="badge bg-danger">MODÉLISATION MATHÉMATIQUE</span> :
+        
+            </h3>
+            <p>
+                Les objectifs de cette partie sont extrèmement importants pour la suite de votre scolarité en Mathématiques et en Physique (bien au-delà de ce que vous imaginez en ce moment...mais faîtes-moi confiance !).
+                Qu'est-ce qu'un modèle mathématique ?
+                
+                Nous allons tenter de trouver un modèle mathématique de la droite c'est à dire trouver l'équation mathématique qui permet d'obtenir une droite sur un graphique. Pour cela, nous allons calculer la tension électrique U à partir de l'intensité électrique I en supposant
+                 que l'équation mathématique qui permet de calculer U à partir de I est : 
+            </p>
+            <p>𝑈<sub>(𝑒𝑛𝑉)</sub> = 𝑅 × 𝐼<sub>(𝑒𝑛𝐴)</sub></p>
+
+                <span class="badge bg-success">Méthode utilisée</span>
+                
+                <p>Pour cela, un peu de méthode et de bon sens seront nécessaires : on commence toujours par des valeurs numériques SIMPLES et FACILES pour faire les calculs (ces calculs doivent être faisables de tête !).
+                
+                Par exemple, si 𝐼 = 1𝐴
+                et 𝑅 = 2, 𝑈 = 2×1 = 2𝑉.
+                Si 𝐼 = 2𝐴 et 𝑅=2, 𝑈 = 2×2 = 4𝑉...et ainsi de suite.</p>
+    </div>
+</div>
+
+<div class="row m-5">
+    <div class="col-md-3 col-sm-12 bg-white text-dark p-4 ">
+    <!-- CANEVAS 2 -->
+    <div style="width:400px; height:500px">
+        <canvas id="myChart2" width="200" height="200">Canevas</canvas>
+    </div>
+
+    <!-- SLIDER 2 -->
+    <div id="slider2" class="m-3">
+        <input class="bar" type="range" id="rangeinput2" min="0" max="5" step="0.5" value="1" />
+        R = <output id="rangevalue2">1</output>
+    </div>
+    <script  src="graph02.js"></script>
+</div>
+<div class="col-md-9 col-sm-12 bg-white text-dark p-4 mt-5">
+    <h3 class="lead fs-3 text-justify">
+    
+        <span class="badge bg-danger ">Continuons sur notre lancée...</span> :
+    
+        </h3>
+        <p>Cette fois, toujours en supposant que l'équation mathématique qui permet de calculer U à partir de I est : 
+            
+        </p>
+        <p>𝑈 <sub>(𝑒𝑛𝑉)</sub> = 𝑅 × 𝐼<sub>(𝑒𝑛𝐴)</sub></p>
+        <p>
+            Nous allons voir si nous comprenons cette équation pour des cas un peu moins SIMPLES et FACILES (mais toujours
+             avec des calculs faisables de tête, mais un peu plus difficiles...). 
+        </p>
+            <span class="badge bg-success">Méthode utilisée</span>
+            
+            <p>Cette fois, 𝑅
+
+                pourra être un nombre à virgule (nombre décimal):
+                
+                Par exemple, si 𝐼 = 1𝐴
+                et 𝑅 =2,5, 𝑈 = 2, 5 × 1 = 2,5𝑉.
+                Si 𝐼 = 2𝐴 et 𝑅 = 2,5, 𝑈 = 2,5 × 2 = 5𝑉...et ainsi de suite.
+                </p>
+</div>
+</div>
+<div class="row bg-light">
+    <div class="col-12 text-center display-6 text-uppercase bg-light fw-bold">
+    <p class="pt-4 px-3">CALCULONS LE COEFFICIENT DE PROPORTIONNALITÉ  </p> 
+    </div>
+</div>
+
+<div class="row bg-light">
+    <div class="col-md-6 col-sm-12 bg-white text-dark p-4">
+    <h3 class="text-center fst-italic">L'intensité I en A : </h3>
+       <img class="img-fluid" src="./pictures/calcul_pente.jpg">
+    </div>
+    <div class="col-md-6 col-sm-12 bg-light text-dark p-4">
+    <h3 class="text-center fst-italic">CALCUL DU COEFFICIENT DE PROPORTIONNALITÉ : </h3>
+    <p>
+        Nous constatons que :
+        <ol>
+            <li>C'est une droite.</li>
+            <li>Elle passe par l'origine du graphique.</li>
+        </ol> 
+        On a DONC une relation de PROPORTIONNALITÉ ENTRE I ET U : U = ? X I.
+    </p>
+    <p>Calculons le coefficient de proportionnalité...D'abord, TOUS LES POINTS SE TROUVANT SUR LA DROITE
+        vérifient cette relation de proportionnalité. Donc, on peut choisir n'importe quel point
+        sur la droite pour le calculer ! J'en ai choisi 2 :
+    </p>
+    <p>Pour le 1er : 7,6 = ? x 0.075. Donc, ? = 7,6/0.075 = 101,3</p>
+    <p>Pour le 2ème : 9,7 = ? x 0.095. Donc, ? = 9,7/0.095 = 102,1</p>
+    </div>
+    
+</div>
+
+<div class="row bg-dark">
+    <div class="col-12 text-center display-5 text-uppercase fw-bold">
+        <p class="pt-4 text-white">À QUOI CORRESPOND CE COEFFICIENT DE PROPORTIONNALITÉ ?</p>
+    </div>
+</div>
+<div class="row">
+    
+     <div class="col-md-6 col-sm-12 bg-dark text-dark p-4 ">
+        <div class="ratio ratio-16x9">
+            <iframe class="rounded" src="https://www.youtube.com/embed/FNMNz9E58Lk" title="YouTube video player" frameborder="0"
+             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+    </div>
+
+
+    <div class="col-md-6 col-sm-12 bg-dark text-white p-4 ">
+        <h3 class="lead fs-3 text-justify">
+            
+            <span class="badge bg-success">MESURE</span> : on branche le multimètre en OHMMÈTRE et on
+            constate que l'on trouve quasiment la même valeur que le coefficient de proportionnalité.
+            Donc, ce coefficient de proportionnalité est aussi la valeur de la résistance que l'on a 
+            utilisée !
+            </h3>
+    </div>
+</div>
+
+
+    
+ 
     
     <script>
             var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
@@ -137,4 +277,4 @@
     </script>
         
 </body>
-</html>a
+</html>
