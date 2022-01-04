@@ -129,38 +129,42 @@
         </div>
     </div>
 
-<div class="row m-5">
-    <div class="col-md-3 col-sm-12 bg-white text-dark p-4 ">
+<div class="row m-1">
+    <div class="col-md-5 col-sm-12 bg-white text-dark p-4 ">
         <!-- CANEVAS 1 -->
-        <div style="width:400px; height:500px">
-            <canvas id="myChart" width="200" height="200">Canevas</canvas>
+        <div style="width:375px; height:400px" class="mx-auto">
+            <canvas id="myChart" width="200" height="400" class="col-md-5 col-sm-12">Canevas</canvas>
         </div>
 
         <!-- SLIDER 1 -->
-        <div id="slider" class="m-3">
+        <div id="slider" class="text-center">
             <input class="bar" type="range" id="rangeinput" min="0" max="5" step="1" value="1" />
             R = <output id="rangevalue">1</output>
         </div>
         <script  src="graph01.js"></script>
     </div>
-    <div class="col-md-9 col-sm-12 bg-white text-dark p-4 mt-5">
+    <div class="col-md-7 col-sm-12 bg-white text-dark mt-5">
         <h3 class="lead fs-3 text-justify">
         
             <span class="badge bg-danger">MODÉLISATION MATHÉMATIQUE</span> :
         
             </h3>
-            <p>
-                Les objectifs de cette partie sont extrèmement importants pour la suite de votre scolarité en Mathématiques et en Physique (bien au-delà de ce que vous imaginez en ce moment...mais faîtes-moi confiance !).
+            <p class="text-justify">
+                Les objectifs de cette partie sont extrèmement importants pour la suite de votre scolarité en Mathématiques
+                 et en Physique (bien au-delà de ce que vous imaginez en ce moment...mais faîtes-moi confiance !).
                 Qu'est-ce qu'un modèle mathématique ?
                 
-                Nous allons tenter de trouver un modèle mathématique de la droite c'est à dire trouver l'équation mathématique qui permet d'obtenir une droite sur un graphique. Pour cela, nous allons calculer la tension électrique U à partir de l'intensité électrique I en supposant
+                Nous allons tenter de trouver un modèle mathématique de la droite c'est à dire trouver l'équation 
+                mathématique qui permet d'obtenir une droite sur un graphique. Pour cela, nous allons calculer la 
+                tension électrique U à partir de l'intensité électrique I en supposant
                  que l'équation mathématique qui permet de calculer U à partir de I est : 
             </p>
             <p>𝑈<sub>(𝑒𝑛𝑉)</sub> = 𝑅 × 𝐼<sub>(𝑒𝑛𝐴)</sub></p>
 
                 <span class="badge bg-success">Méthode utilisée</span>
                 
-                <p>Pour cela, un peu de méthode et de bon sens seront nécessaires : on commence toujours par des valeurs numériques SIMPLES et FACILES pour faire les calculs (ces calculs doivent être faisables de tête !).
+                <p>Pour cela, un peu de méthode et de bon sens seront nécessaires : on commence toujours par des valeurs
+                     numériques SIMPLES et FACILES pour faire les calculs (ces calculs doivent être faisables de tête !).
                 
                 Par exemple, si 𝐼 = 1𝐴
                 et 𝑅 = 2, 𝑈 = 2×1 = 2𝑉.
@@ -168,29 +172,27 @@
     </div>
 </div>
 
-<div class="row m-5">
-    <div class="col-md-3 col-sm-12 bg-white text-dark p-4 ">
+<div class="row m-1">
+    <div class="col-md-5 col-sm-12 bg-white text-dark p-4 ">
     <!-- CANEVAS 2 -->
-    <div style="width:400px; height:500px">
+    <div style="width:375px; height:400px" class="mx-auto">
         <canvas id="myChart2" width="200" height="200">Canevas</canvas>
     </div>
 
     <!-- SLIDER 2 -->
-    <div id="slider2" class="m-3">
+    <div id="slider2" class="m-3 text-center">
         <input class="bar" type="range" id="rangeinput2" min="0" max="5" step="0.5" value="1" />
         R = <output id="rangevalue2">1</output>
     </div>
     <script  src="graph02.js"></script>
 </div>
-<div class="col-md-9 col-sm-12 bg-white text-dark p-4 mt-5">
+<div class="col-md-7 col-sm-12 bg-white text-dark p-4 mt-5">
     <h3 class="lead fs-3 text-justify">
     
         <span class="badge bg-danger ">Continuons sur notre lancée...</span> :
     
         </h3>
-        <p>Cette fois, toujours en supposant que l'équation mathématique qui permet de calculer U à partir de I est : 
-            
-        </p>
+        <p>Cette fois, toujours en supposant que l'équation mathématique qui permet de calculer U à partir de I est : </p>
         <p>𝑈 <sub>(𝑒𝑛𝑉)</sub> = 𝑅 × 𝐼<sub>(𝑒𝑛𝐴)</sub></p>
         <p>
             Nous allons voir si nous comprenons cette équation pour des cas un peu moins SIMPLES et FACILES (mais toujours
