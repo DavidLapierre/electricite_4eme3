@@ -76,6 +76,15 @@
                         },
                         grid: {
                             color:'rgba(25, 86, 200,0.75)'
+                        },
+                        title: {
+                            display: true,
+                            text: 'U',
+                            font: {
+                                size: 25,
+                                weight: "bold",
+                                family: "Helvetica Neue"
+                            }
                         }
                     }, 
                     x: {
@@ -87,6 +96,15 @@
                         },
                         grid: {
                             color:'rgba(25, 86, 200,0.65)'
+                        },
+                        title: {
+                            display: true,
+                            text: 'I',
+                            font: {
+                                size: 25,
+                                weight: "bold",
+                                family: "Helvetica Neue"
+                            }
                         }
                     }, 
                 }
