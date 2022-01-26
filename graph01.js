@@ -32,7 +32,8 @@
                         'red',
                         'red'
                     ],
-                    borderWidth: 2.5
+                    borderWidth: 2.5,
+                    labels: ['0','1', '2', '3','4', '5', '6', '7', '8', '9', '10']
                 }]
     }
     // yScaleText plugin block
@@ -60,6 +61,19 @@
     // La configuration doit être placée avant le bloc de rendu. 
     // Comme ce bloc a tendance à dépendre du bloc de données en raison de la variable data const.
     // ----------------------------------
+    const affichage = {
+        callbacks: {
+            title: function(context) {
+                return '';
+            },
+            label: function(context) {
+                return `I  = ` + context.dataset.labels[context.dataIndex]
+            },
+            afterLabel: function(context) {
+                return `U = ` + context.dataset.data[context.dataIndex]
+            }
+        }
+    }
 
     const config = {
         type: 'line',
@@ -110,6 +124,7 @@
                 }
                 ,
                 plugins: {
+                    tooltip: affichage,
                     title: {
                         display: true,
                         text: 'U = ' + rangeInput.value + ' x I',
